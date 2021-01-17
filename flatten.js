@@ -1,4 +1,6 @@
-/* Flattening Exercise */
+/* Flattening Exercise 
+   Converts 2D array to unidimensional */
+
 'use strict';
 let cl = console.log;
 document.write("Javascript Active: " + Date())
@@ -9,18 +11,15 @@ const arr3 = [1992, "chevy", "nova"];
 
 const cars = [arr1, arr2, arr3];
 
-let oneDimArray = [];
+let outputArray = [];
 
-// cl(cars[0][1]);
-
-function combine (array = [""]) {
+function combine (array) {
     let combinedEl = array.reduce((a,b) => a + " " +b);
-    // cl(combinedEl);
     return(combinedEl);
 }
 
-cars.forEach(i => oneDimArray.push(combine(i)));
+cars.forEach(i => outputArray.push(combine(i)));
 
-console.log(oneDimArray);
+console.log(outputArray);
 
 
