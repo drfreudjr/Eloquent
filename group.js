@@ -5,7 +5,7 @@ let cl = console.log;
 class Group {
     constructor(name){
 
-    this.array = [1,2,3,4,5];
+    this.array = [1,2];
 
     this.add = function (itemToAdd) {
         // cl(`trying to add ${itemToAdd}`);
@@ -18,25 +18,41 @@ class Group {
             }
     }
     this.delete = function (itemToDelete) {
-        cl(`trying to delete ${itemToDelete}`);
         if (this.array.includes(itemToDelete) == true) {
             console.log(`Deleting ${itemToDelete}`);
             let x = this.array.indexOf(itemToDelete);
-            console.log(`X is ${x}`);
             this.array.splice(x,1);
-            console.log(`The list is now ${this.array}`);
+            if (this.array.length)
+                console.log(`The list is now ${this.array}`);
+            else
+                console.log('The list is empty');
             }
         else 
             console.log('Sorry no such item');
         }
+    this.has = function (itemToCheck){
+        if (this.array.includes(itemToCheck))
+            console.log(`${itemToCheck} is in the list`);
+        else
+            console.log(`${itemToCheck} is not in the list`)
     }
+    }
+
 }
 
 let test = new Group();
-test.add(6);
+
+test.add(2);
+test.add(3);
 test.delete(1);
+test.delete(2);
 test.delete(3);
+test.add(2);
+test.has(2);
+test.has(3);
 
 
-cl(test.array);
+
+
+// cl(test.array);
 
